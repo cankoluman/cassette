@@ -3,6 +3,7 @@
   <files>
     <file xdt:Transform="Insert" src="bin\Release\net40\Cassette.Less.pdb" target="lib\net40-client" />
     <file xdt:Transform="Insert" src="bin\ReleaseNET35\net35\Cassette.Less.pdb" target="lib\net35" />
+	<file xdt:Transform="Insert" src="bin\ReleaseNET45\net45\Cassette.Less.pdb" target="lib\net45" />
     <file xdt:Transform="Insert" src="**\*.cs" target="src" />
   </files>
 </package>

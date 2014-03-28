@@ -3,6 +3,7 @@
   <files>
     <file src="bin\Release\net40\Cassette.Views.pdb" target="lib\net40" xdt:Transform="Insert" />
     <file src="bin\ReleaseNET35\net35\Cassette.Views.pdb" target="lib\net35" xdt:Transform="Insert" />    
+	<file src="bin\ReleaseNET45\net45\Cassette.Views.pdb" target="lib\net45" xdt:Transform="Insert" />    
     <file src="**\*.cs" target="src" xdt:Transform="Insert" />
   </files>
 </package>

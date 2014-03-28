@@ -22,5 +22,6 @@
   <files xdt:Transform="Insert">
     <file src="bin\Release\net40\Cassette.Less.dll" target="lib\net40-client" />
     <file src="bin\ReleaseNET35\net35\Cassette.Less.dll" target="lib\net35" />
+	<file src="bin\ReleaseNET45\net45\Cassette.Less.dll" target="lib\net45" />
   </files>
 </package>

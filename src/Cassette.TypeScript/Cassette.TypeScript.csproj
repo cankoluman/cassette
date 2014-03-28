@@ -41,21 +41,22 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugNET45|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\DebugNET45\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(Configuration)\$(TargetFrameworkConstant)</OutputPath>
+    <BaseIntermediateOutputPath>obj\$(Configuration)\$(TargetFrameworkConstant)</BaseIntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE;$(TargetFrameworkConstant)</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseNET45|AnyCPU'">
-    <OutputPath>bin\ReleaseNET45\</OutputPath>
-    <DefineConstants>TRACE;NET45</DefineConstants>
-    <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(Configuration)\$(TargetFrameworkConstant)</OutputPath>
+    <BaseIntermediateOutputPath>obj\$(Configuration)\$(TargetFrameworkConstant)</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE;$(TargetFrameworkConstant)</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

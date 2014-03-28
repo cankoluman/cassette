@@ -12,5 +12,6 @@
   </metadata>
   <files xdt:Transform="Insert">
     <file src="bin\Release\net40\Cassette.Sass.dll" target="lib\net40-client" />
+	<file src="bin\ReleaseNET45\net45\Cassette.Sass.dll" target="lib\net45" />
   </files>
 </package>

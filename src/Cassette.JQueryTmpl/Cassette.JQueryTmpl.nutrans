@@ -11,5 +11,6 @@
   <files xdt:Transform="Insert">
     <file src="bin\Release\net40\Cassette.JQueryTmpl.dll" target="lib\net40-client" />
     <file src="bin\ReleaseNET35\net35\Cassette.JQueryTmpl.dll" target="lib\net35" />
+	<file src="bin\ReleaseNET45\net45\Cassette.JQueryTmpl.dll" target="lib\net45" />
   </files>
 </package>

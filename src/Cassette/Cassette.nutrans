@@ -17,6 +17,8 @@
     </dependencies>
   </metadata>
   <files xdt:Transform="Insert">
+    <file src="bin\ReleaseNET45\net45\Cassette.dll" target="lib\net45" />
+    <file src="bin\ReleaseNET45\net45\Cassette.xml" target="lib\net45" />  
     <file src="bin\Release\net40\Cassette.dll" target="lib\net40-client" />
     <file src="bin\Release\net40\Cassette.xml" target="lib\net40-client" />
     <file src="bin\ReleaseNET35\net35\Cassette.dll" target="lib\net35" />

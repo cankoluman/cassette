@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+
+<!-- Cassette.targets contains some helper tasks we'll use -->
+  <Import Project="Cassette.targets" />
+  <Target Name="Default" DependsOnTargets="Build" />
+
+  <Target Name="Build">
+
+    <Delete Files="build\net45\**\*.*" />
+    
+    <MSBuild Projects="src\Cassette.sln" 
+             Properties="Configuration=ReleaseNET45;TargetFramework=v4.5" />
+    <Copy SourceFiles="license.txt" 
+          DestinationFolder="build\net45;"/>
+  </Target>
+
+  <Target Name="Test" DependsOnTargets="Build">
+    <ItemGroup>
+      <TestProject Include="src\Cassette.UnitTests\bin\ReleaseNET45\NET45\Cassette.UnitTests.dll"/>
+      <TestProject Include="src\*\bin\ReleaseNET45\NET45\Cassette.*.UnitTests.dll"/>
+      <TestProject Include="src\Cassette.IntegrationTests\bin\ReleaseNET45\NET45\Cassette.IntegrationTests.dll"/>
+    </ItemGroup>
+    <Exec Command="tools\xunit.console.clr4.x86.exe %(TestProject.Identity)" />
+  </Target>
+
+</Project>

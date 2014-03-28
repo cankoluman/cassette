@@ -59,8 +59,26 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugNET45|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugNET45\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET45</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseNET45|AnyCPU'">
+    <OutputPath>bin\ReleaseNET45\</OutputPath>
+    <DefineConstants>TRACE;NET45</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nQuant.Core" >
+    <Reference Include="nQuant.Core">
       <HintPath Condition="'$(TargetFrameworkVersion)' == 'v3.5'">$(SolutionDir)packages\nQuant.0.9.8\Lib\net20\nQuant.Core.dll</HintPath>
       <HintPath Condition="'$(TargetFrameworkVersion)' == 'v4.0'">$(SolutionDir)packages\nQuant.0.9.8\Lib\net40\nQuant.Core.dll</HintPath>
     </Reference>
@@ -69,7 +87,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" Condition="'$(TargetFrameworkVersion)' == 'v4.0'"/>
+    <Reference Include="Microsoft.CSharp" Condition="'$(TargetFrameworkVersion)' == 'v4.0'" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>

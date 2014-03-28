@@ -31,12 +31,23 @@
     
     <Copy SourceFiles="license.txt" 
           DestinationFolder="build\net35"/>
+		  
+    <!-- .NET 4.5 build -->
+    <MSBuild Projects="src\Cassette.sln"
+             Properties="Configuration=ReleaseNET45;Define=NET45" />
+    
+    <Copy SourceFiles="license.txt" 
+          DestinationFolder="build\net45"/>		  
     
   </Target>
 
   
   <Target Name="Test" DependsOnTargets="Build">
     <ItemGroup>
+      <!-- Test .NET 4.5 Projects -->
+      <TestProject Include="src\Cassette.UnitTests\bin\Release45\Cassette.UnitTests.dll"/>
+      <TestProject Include="src\*\bin\Release45\Cassette.*.UnitTests.dll"/>
+      <TestProject Include="src\Cassette.IntegrationTests\bin\Release45\Cassette.IntegrationTests.dll"/>	
       <!-- Test .NET 4.0 Projects -->
       <TestProject Include="src\Cassette.UnitTests\bin\Release\Cassette.UnitTests.dll"/>
       <TestProject Include="src\*\bin\Release\Cassette.*.UnitTests.dll"/>

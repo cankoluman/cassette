@@ -12,14 +12,14 @@
     <TargetFrameworkVersion Condition="'$(Configuration)|$(Platform)' == 'DebugNET35|AnyCPU'">v3.5</TargetFrameworkVersion>
     <TargetFrameworkVersion Condition="'$(Configuration)|$(Platform)' == 'ReleaseNET35|AnyCPU'">v3.5</TargetFrameworkVersion>
     <TargetFrameworkVersion Condition="'$(Configuration)|$(Platform)' == 'DebugNET45|AnyCPU'">v4.5</TargetFrameworkVersion>
-    <TargetFrameworkVersion Condition="'$(Configuration)|$(Platform)' == 'ReleaseNET45|AnyCPU'">v4.5</TargetFrameworkVersion>	
+    <TargetFrameworkVersion Condition="'$(Configuration)|$(Platform)' == 'ReleaseNET45|AnyCPU'">v4.5</TargetFrameworkVersion>
     <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
-     <PropertyGroup Condition=" '$(TargetFrameworkVersion)' == 'v4.5' ">
+  <PropertyGroup Condition=" '$(TargetFrameworkVersion)' == 'v4.5' ">
     <TargetFrameworkConstant>NET45</TargetFrameworkConstant>
-  </PropertyGroup> 
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFrameworkVersion)' == 'v4.0' ">
     <TargetFrameworkConstant>NET40</TargetFrameworkConstant>
   </PropertyGroup>
@@ -32,7 +32,7 @@
     <Optimize>false</Optimize>
     <OutputPath>bin\$(Configuration)\$(TargetFrameworkConstant)</OutputPath>
     <BaseIntermediateOutputPath>obj\$(Configuration)\$(TargetFrameworkConstant)</BaseIntermediateOutputPath>
-    <DefineConstants>DEBUG;TRACE;$(TargetFrameworkConstant)</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NET45</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -56,12 +56,15 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseNET45|AnyCPU'">
     <OutputPath>bin\$(Configuration)\$(TargetFrameworkConstant)</OutputPath>
-    <BaseIntermediateOutputPath>obj\$(Configuration)\$(TargetFrameworkConstant)</BaseIntermediateOutputPath>
     <DefineConstants>TRACE;$(TargetFrameworkConstant)</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugNET45|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NET45</DefineConstants>
+    <OutputPath>bin\DebugNET45\NET45\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

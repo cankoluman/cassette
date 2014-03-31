@@ -16,13 +16,13 @@
     <TargetFrameworkVersion Condition="'$(Configuration)|$(Platform)' == 'DebugNET35|AnyCPU'">v3.5</TargetFrameworkVersion>
     <TargetFrameworkVersion Condition="'$(Configuration)|$(Platform)' == 'ReleaseNET35|AnyCPU'">v3.5</TargetFrameworkVersion>
     <TargetFrameworkVersion Condition="'$(Configuration)|$(Platform)' == 'DebugNET45|AnyCPU'">v4.5</TargetFrameworkVersion>
-    <TargetFrameworkVersion Condition="'$(Configuration)|$(Platform)' == 'ReleaseNET45|AnyCPU'">v4.5</TargetFrameworkVersion>	
+    <TargetFrameworkVersion Condition="'$(Configuration)|$(Platform)' == 'ReleaseNET45|AnyCPU'">v4.5</TargetFrameworkVersion>
     <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.0</TargetFrameworkVersion>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
-   <PropertyGroup Condition=" '$(TargetFrameworkVersion)' == 'v4.5' ">
+  <PropertyGroup Condition=" '$(TargetFrameworkVersion)' == 'v4.5' ">
     <TargetFrameworkConstant>NET45</TargetFrameworkConstant>
-  </PropertyGroup> 
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFrameworkVersion)' == 'v4.0' ">
     <TargetFrameworkConstant>NET40</TargetFrameworkConstant>
   </PropertyGroup>
@@ -88,11 +88,13 @@
     <Reference Include="Microsoft.Scripting.Metadata">
       <HintPath>$(SolutionDir)packages\IronRuby.1.1.3\Lib\Microsoft.Scripting.Metadata.dll</HintPath>
     </Reference>
-    <Reference Include="SassAndCoffee.Core">
-      <HintPath>$(SolutionDir)packages\SassAndCoffee.Core.2.0.2.0\lib\net40-Client\SassAndCoffee.Core.dll</HintPath>
+    <Reference Include="SassAndCoffee.Core, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SassAndCoffee.Core.2.0.2.0\lib\net40-Client\SassAndCoffee.Core.dll</HintPath>
     </Reference>
-    <Reference Include="SassAndCoffee.Ruby">
-      <HintPath>$(SolutionDir)packages\SassAndCoffee.Ruby.2.0.2.0\lib\net40-Client\SassAndCoffee.Ruby.dll</HintPath>
+    <Reference Include="SassAndCoffee.Ruby, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SassAndCoffee.Ruby.2.0.2.0\lib\net40-Client\SassAndCoffee.Ruby.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
